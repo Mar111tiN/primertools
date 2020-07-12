@@ -13,7 +13,7 @@
 
 ## The Tool kit
 ### run_primer3 - Retrieve primer sequences for given mutations
-+ run_primer3 requires a pandas df containing mutations in the colunns Chr, Start, End, Ref, Alt
++ run_primer3 requires a pandas df containing mutations in the columns Chr, Start, End, Ref, Alt
 + returns df populated with fwd/rev-Primer pairs and accessory info like insert size, annealing temp and insert sequence with mutation included
 
 
