@@ -7,6 +7,7 @@
 + #### for jupyter, add code to pythonpath and import tools (see next section):   
    * `from p3 import <tool>`
 + #### for docker:
+   * see on [Docker Hub](https://hub.docker.com/repository/docker/martin37szyska/primertools)
    * `docker run -p <local-IP>:8888 -v $(pwd):/home/martin/work -v <your_static_folder>:/home/martin/static martin37szyska/primertools:<TAG>`
    * store your own code in `<mounted_volume>/code` and import directly (folder code automatically added to PYTHONPATH)
    * example notebooks are available in nb_templates
