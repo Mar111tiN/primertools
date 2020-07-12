@@ -17,12 +17,9 @@
 + returns df populated with fwd/rev-Primer pairs and accessory info like insert size, annealing temp and insert sequence with mutation included
 
 
-### Based on Jupyter Docker Stacks with modifications focused on size and simplicity
+
+
+### Based on modified Jupyter Docker Stacks with modifications focused on size and simplicity
 
 visit their documentation for more great content
 * [Jupyter Docker Stacks on ReadTheDocs](http://jupyter-docker-stacks.readthedocs.io/en/latest/index.html)
-
-Alpine versions are also available based on [alpine-miniconda3](https://hub.docker.com/r/frolvlad/alpine-miniconda3) with even smaller size
-
-+ build the alpine version with:
-    * `--build-arg=latest-alpine --build-arg=CURRENTUSER=10151`
