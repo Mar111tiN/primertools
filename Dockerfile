@@ -15,6 +15,9 @@ RUN pip install --upgrade pip && \
 RUN echo "sys.path.insert(0,'/home/martin/code_master')" >> .ipython/profile_default/startup/startup.py && \
     echo "sys.path.insert(0,'/home/martin/work/code')" >> .ipython/profile_default/startup/startup.py
 
+# copy the primer3-manual for reference
+COPY manual ${HOME}/manual
+
 # copy the registry code to code_master
 COPY code ${HOME}/code_master
 
@@ -22,6 +25,7 @@ COPY code ${HOME}/code_master
 COPY nb ${HOME}/nb_templates
 
 COPY testdata ${HOME}/testdata
+
 
 # Switch back to martin to avoid accidental container runs as root
 USER $CURRENTUSER
