@@ -1,5 +1,4 @@
 import os
-from subprocess import check_call as shell
 from datetime import datetime as dt
 
 
@@ -31,17 +30,3 @@ def show_output(text, color="normal", multi=False, time=True, **kwargs):
     proc = f"\033{colors['process']}Process {os.getpid()}\033[0m : " if multi else ""
     text = f"\033{colors[color]}{text}\033[0m"
     print(time + proc + text, **kwargs)
-
-
-def show_command(command, list=False, multi=True, **kwargs):
-    """
-    prints the command line if debugging is active
-    """
-
-    proc = f"\033[92mProcess {os.getpid()}\033[0m : " if multi else ""
-    if list:
-        command = f"\033[1m$ {' '.join(command)}\033[0m"
-    else:
-        command = f"\033[1m$ {command}\033[0m"
-    print(proc + command, **kwargs)
-    return
