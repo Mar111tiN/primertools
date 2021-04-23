@@ -9,7 +9,12 @@ from script_utils import show_output
 # ############ DEFAULT CONFIGS ##################
 # for description of config see:
 #       manual in https://htmlpreview.github.io/?https://github.com/libnano/primer3-py/master/primer3/src/libprimer3/primer3_manual.htm#PRIMER_MAX_SELF_ANY
-PCR_config = {"seq_len": 500, "mut_pad": 5, "prod_size_min": 120, "prod_size_max": 220}
+PCR_config = {
+    "seq_len": 500,
+    "center_offSet": 5,
+    "prod_size_min": 120,
+    "prod_size_max": 220
+    }
 
 p3_default_config = {
     "PRIMER_OPT_SIZE": 20,
@@ -84,8 +89,8 @@ def get_primer_df(mut_df, primer3_config, chroms_folder, chrom):
 def run_primer3(
     mut_df,
     chroms_folder=".",
-    pcr_config=PCR_config,  # use defaults defined at top
-    primer3_config=p3_improved_config,  # use defaults defined at top
+    pcr_config={},  # use defaults defined at top
+    primer3_config={},  # use defaults defined at top
     threads=1,
 ):
     """
@@ -94,7 +99,7 @@ def run_primer3(
     primer cols:
 
     """
-
+    
     # apply pcr size to primer3_config
     primer3_config["PRIMER_PRODUCT_SIZE_RANGE"] = [
         pcr_config["prod_size_min"],
@@ -106,6 +111,7 @@ def run_primer3(
 
     # COLS
     base_cols = ["Chr", "Start", "End", "Ref", "Alt"]
+    # keep possible columns left of Chr
     # save the id columns into org_df for later merge
     keep_cols = list(mut_df.columns[: list(mut_df.columns).index("Chr")])
 

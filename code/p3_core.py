@@ -16,7 +16,7 @@ def compute_primers(row, chrom, config):
     seq_start = pos - half_seq
     seq_end = pos + half_seq
     seq = chrom["sequence"][seq_start:seq_end]
-    pad = int(config["mut_pad"] / 2)
+    pad = int(config["center_offSet"] / 2)
     half_size = int(config["prod_size_min"] / 2)
 
     # calculate the target_range as offSet from center (half)
