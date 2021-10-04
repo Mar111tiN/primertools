@@ -4,8 +4,14 @@
 + running targeted deep-sequencing runs
 
 ### available as code best used from jupyter notebooks or docker container
-+ #### for jupyter, add code to pythonpath and import tools (see next section):   
-   * `from p3 import <tool>`
++ #### for jupyter:
+   * clone the repository into \<your folder\> and move to into primertools:
+      + `cd <your_folder> && git clone https://github.com/Mar111tiN/primertools.git && cd primertools`
+   * create conda environment to run the notebooks (for AppleSilicon use env/primer3_M1-env.yml):
+      + `conda env create -n primer3-env -f env/primer3-env.yml`
+   * run the jupyter notebook and try primer 3 on your testdata with primer3_test.ipynb
+      + instructions are included in the notebook 
+
 + #### for docker:
    * see on [Docker Hub](https://hub.docker.com/repository/docker/martin37szyska/primertools)
    * `docker run -p <local-IP>:8888 -v $(pwd):/home/martin/work -v <your_static_folder>:/home/martin/static martin37szyska/primertools:<TAG>`
@@ -20,7 +26,7 @@
 
 
 
-### Based on modified Jupyter Docker Stacks with modifications focused on size and simplicity
+### Docker image is based on modified Jupyter Docker Stacks with modifications focused on size and simplicity
 
 visit their documentation for more great content
 * [Jupyter Docker Stacks on ReadTheDocs](http://jupyter-docker-stacks.readthedocs.io/en/latest/index.html)
