@@ -20,11 +20,15 @@
 
 ## The Tool kit
 ### run_primer3 - Retrieve primer sequences for given mutations
-+ run_primer3 requires a pandas df containing mutations in the columns Chr, Start, End, Ref, Alt
++ run_primer3 requires a pandas dataframe containing mutations in the columns Chr, Start, End, Ref, Alt
 + returns df populated with fwd/rev-Primer pairs and accessory info like insert size, annealing temp and insert sequence with mutation included
 
-
-
+### check_primerDB - search for suitable primers in primer list
++ check_primerDB requires mutation dataframe of same format as run_primer3
++ returns tuple of 
+   * same mutation dataframe with added DBhits column giving the number of hits in the DB
+   * dataframe containing the primers from the database for each mutation with a hit
++ try out in notebook primer3-test.ipynb 
 
 ### Docker image is based on modified Jupyter Docker Stacks with modifications focused on size and simplicity
 
