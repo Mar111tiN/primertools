@@ -19,7 +19,6 @@ def mut2insert(mut={}, seq={}, return_none=False):
     if mutation location is out of bounds of sequence, only the sequence is returned without editing
     """
 
-    print(mut)
     if mut["Chr"] != seq["Chr"]:
         return None if return_none else seq["seq"]
     if (mut["Start"] < seq["Start"]) or (mut["End"] > seq["End"]):
