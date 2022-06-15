@@ -76,7 +76,7 @@ def get_primer_df(mut_df, primer3_config, chroms_folder, chrom):
     """
     allocates dfs chrom-wise and controls row-wise computation
     """
-    show_output(f"Running primer3 for chrom {chrom}.", multi=True)
+    show_output(f"Running primer3 for chromosome {chrom}.", multi=True)
     chrom_dict = get_chrom(chrom, chroms_folder)
     chr_df = mut_df.query("Chr == @chrom")
     primer_df = chr_df.apply(
