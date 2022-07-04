@@ -9,6 +9,9 @@
       + `cd <your_folder> && git clone https://github.com/Mar111tiN/primertools.git && cd primertools`
    * create conda environment to run the notebooks (for AppleSilicon use env/primer3_M1-env.yml):
       + `conda env create -n primer3-env -f env/primer3-env.yml`
+   * for AppleSilicon you have to use the Intel64-build via Rosetta:
+      + `CONDA_SUBDIR=osx-64 conda env create -n primer3-env -f env/primer3-env.yml`
+      + then you can fix the CONDA_SUBDIR env: `conda activate primer3-env && conda env config vars set CONDA_SUBDIR=osx-64`
    * run the jupyter notebook and try primer 3 on your testdata with primer3_test.ipynb
       + instructions are included in the notebook 
 
