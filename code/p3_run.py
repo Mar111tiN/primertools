@@ -183,5 +183,5 @@ def primer3_master(
     )
 
     # ###### write to file #############
-    primer_df.to_csv(o, sep="\t", index=False)
+    primer_df.drop_duplicates().to_csv(o, sep="\t", index=False)
     show_output(f"Writing primer list to {o}.")
